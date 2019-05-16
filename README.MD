@@ -95,4 +95,4 @@ Maheshwar Reddy Chappidi - maheshwarreddy.c1729@gmail.com
 
 ## Acknowledgments
 
-* We would like to thank our supervisor: Ricardo Britto and Manager: Bodil Jansson for their continuos support through out the Master Thesis work at Ericsson.
+* We would like to thank our supervisor: Ricardo Britto and Manager: Bodil Jansson for their continuous support through out the Master Thesis work at Ericsson.
