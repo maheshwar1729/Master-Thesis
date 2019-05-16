@@ -2,8 +2,6 @@ import os
 import json
 import numpy as np
 from chomsky import chomsky
-
-
 class Ind:
     event = None
     input = None
@@ -16,7 +14,6 @@ class Ind:
     rotation = None
     radius = None
     dom = None
-
     def __init__(self, _e, _i=None, _lx=None, _ly=None, _du=None, _dx=None, _dy=None,
                  _scale=None, _rotation=None, _radius=None,
                  _dom=None):
@@ -31,7 +28,6 @@ class Ind:
         self.rotation = _rotation
         self.radius = _radius
         self.dom = _dom
-
     def __str__(self):
         return "{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}".format(
             self.event, self.input, self.locx, self.locy,
@@ -39,7 +35,6 @@ class Ind:
             self.scale, self.rotation, self.radius,
             self.dom
         )
-
     def fuzzy_location(self):
         if self.locx is not None and self.locx < 500:
             self.locx += np.random.randint(0, 100)
@@ -54,27 +49,21 @@ class Ind:
             self.locy -= np.random.randint(0, 100)
         else:
             self.locy = np.random.randint(0, 500)
-
     def fuzzy_input(self):
         self.input = chomsky(np.random.randint(3, 20))
         self.dom = "input"
-
     def fuzzy(self):
         if self.event == "type" or self.event == "input":
             self.fuzzy_input()
         else:
             self.fuzzy_location()
-
     def normalize_dimensions(self, max_width, max_height):
         if self.locx is not None and int(self.locx) >= max_width:
             self.locx = max_width - 50
         if self.locy is not None and int(self.locy) >= max_height:
             self.locy = max_height - 50
-
-
 def parse_line(l):
     parts = l.split()
-
     e = parts[1]
     o = None
     if e == "type":
@@ -97,7 +86,6 @@ def parse_line(l):
                 _du=params['duration'])
     elif e == "multitouch":
         params = json.loads(parts[5])
-
         o = Ind(_e=e, _lx=parts[3], _ly=parts[4],
                 _dx=params['distanceX'],
                 _dy=params['distanceY'],
@@ -108,9 +96,7 @@ def parse_line(l):
                 )
     elif e == "input":
         o = Ind(_e=e, _i=chomsky(np.random.randint(3, 7)), _dom='input')
-
     return o
-
 # {
 # 'multitouch',
 # 'input',
@@ -123,10 +109,8 @@ def parse_line(l):
 def read_log(path):
     if not os.path.exists(path):
         return None
-
     events = set()
     atomic_sequences = []
-
     with open(path, "r") as f:
         lines = f.readlines()
         for l in lines:
@@ -160,12 +144,6 @@ def read_log(path):
                             )
                 elif e == "input":
                     o = Ind(_e=e, _i=parts[5], _dom=''.join(str(e) for e in parts[7:]))
-
                 if o is not None:
                     print(o)
                     atomic_sequences.append(o)
-
-
-
-
-
