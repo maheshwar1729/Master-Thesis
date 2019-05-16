@@ -1,6 +1,6 @@
 # Project Title
 
- "A search-based approach for robustness testing of Business Support Systems".
+ "A Search-Based Approach for Robustness Testing of Business Support Systems Web Applications".
 
 ## Introduction
 
@@ -10,9 +10,9 @@ This tool simulates a random user actions: It click anywhere in the window, ente
 
 This practice, also known as Monkey testing or Fuzz testing, is very common in mobile application development. Now that frontend (MV*, d3.js, Backbone.js, Angular.js, etc.) and backend (Node.js) development use persistent JavaScript applications, this technique becomes valuable for web applications.
 
-### Installing
+### Installing (Works Only in Ericsson internal):
 
-clone the repository from https://gerrit.epk.ericsson.se/#/admin/projects/bssf/tools/rm_analytics
+clone the repository from https://gerrit.epk.ericsson.se/#/admin/projects/bssf/tools/rm_analytics.
 
 Enter the following commands to complete the Installation
 
