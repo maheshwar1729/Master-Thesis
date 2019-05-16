@@ -104,8 +104,6 @@ objects = """ problems of phonemic and morphological analysis.
 
 import textwrap, random
 from itertools import chain, islice
-
-
 def chomsky(times=1, line_length=72):
     parts = []
     for part in (leadins, subjects, verbs, objects):
