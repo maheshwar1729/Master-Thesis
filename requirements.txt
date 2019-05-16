@@ -1,0 +1,5 @@
+flask
+deap
+flask-cors
+selenium
+peewee
