@@ -83,4 +83,4 @@ sudo apt install npm
 5. sudo npm install -g n
 6. sudo n 7.9.0
 
-Please go through the pdf file document for complete understanding of this project: https://github.com/maheshwar1729/Master-Thesis/blob/master/Thesis%20doc.pdf
+Please go through the pdf file document for complete understanding of this project: https://github.com/maheshwar1729/Master-Thesis/blob/master/MaheshwarReddyChappidi_thesis_doc.pdf
